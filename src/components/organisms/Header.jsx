@@ -16,7 +16,7 @@ const Header = ({ dark }) => {
   });
   return (
     <header className={headerClass}>
-      <Link to="/"><img src={(dark && logoWhite) || logoBlack} alt="Neobit Logo" /></Link>
+      <Link to="/"><img src={(dark && logoWhite) || logoBlack} alt="Neobit logo" /></Link>
       <Menu dark={dark} />
     </header>
   );
