@@ -1,0 +1,41 @@
+.hero{
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: $color-primary-black;
+  color: $color-primary-white;
+  overflow: hidden;
+  padding-top: $space-section-small;
+  padding-left: $space-section-big;
+  padding-bottom: $space-section-big;
+
+  &-text{
+    position: relative;
+    min-width: 330px;
+    width: 50%;
+  }
+
+  &-image {
+    position: relative;
+    bottom: -100px;
+    right: -270px;
+    min-width: 330px;
+    width: 50%;
+
+    img{
+      transform: rotate(210deg);
+      width: 60%;
+    }
+  }
+
+  &-title{
+    font-size: $font-size-special;
+    font-weight: $font-weight-bold;
+    color: $color-primary-white;
+    padding: 0;
+    margin: 0;
+  }
+
+  &-content{
+    margin: $space-elements-big 0;
+  }
+}

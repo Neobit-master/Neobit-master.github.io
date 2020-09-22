@@ -1,0 +1,29 @@
+{
+  "astheroidManifest": {
+    "name": "(2015 RC)",
+    "absolute_magnitude_h": 24.3,
+    "estimated_diameter": {
+      "kilometers": {
+        "estimated_diameter_min": 36.6906137531,
+        "estimated_diameter_max": 82.0427064882
+      }
+    },
+    "orbital_data": {
+      "first_observation_date": "2015-01-15",
+      "last_observation_date": "2015-02-27"
+    },
+    "is_potentially_hazardous_asteroid": false,
+    "close_approach_data": [
+      {
+        "epoch_date_close_approach": 1441705500000,
+        "relative_velocity": {
+          "kilometers_per_hour": "70146.106302123"
+        },
+        "miss_distance": {
+          "kilometers": "4027630.320552233"
+        }
+      }
+
+    ]
+  }
+}
