@@ -545,4 +545,8 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
+# Lighthouse
+
+.lighthouseci/
+
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudio,linux,windows,macos,react
