@@ -1,5 +1,6 @@
 @import './reset';
 @import './variables';
+@import './App.scss';
 
 // Layouts
 @import '../styles/layouts/LayoutWS.scss';
@@ -13,6 +14,7 @@
 @import './containers/Astheroids.scss';
 @import './containers/AstheroidDetail.scss';
 @import './containers/Gallery.scss';
+@import './containers/Login.scss';
 @import './containers/NotFound.scss';
 
 // Components
@@ -35,6 +37,7 @@
 @import './components/molecules/Hero.scss';
 @import './components/molecules/Card.scss';
 @import './components/molecules/Images.scss';
+@import './components/molecules/Input.scss';
 
 // Organisms
 @import './components/organisms/Header.scss';

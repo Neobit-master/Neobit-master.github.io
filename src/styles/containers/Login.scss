@@ -1,0 +1,19 @@
+.login {
+  padding: $space-section-medium;
+  &-container {
+    padding: $space-elements-medium;
+    border-radius: 20px;
+    background-color: $color-primary-white;
+    text-align: center;
+    h2 {
+      margin-bottom: $space-elements-medium;
+    }
+    form {
+      display: inline-flex;
+      flex-flow: column;
+    }
+    .input {
+      margin-bottom: $space-elements-medium;
+    }
+  }
+}

@@ -16,6 +16,7 @@ import Molecules from '../containers/Molecules';
 import Organisms from '../containers/Organisms';
 import AstheroidDetail from '../containers/AstheroidDetail';
 import Gallery from '../containers/Gallery';
+import Login from '../containers/Login';
 import NotFound from '../containers/NotFound';
 
 const App = () => {
@@ -24,6 +25,8 @@ const App = () => {
       <Router history={createBrowserHistory()}>
         <Switch>
           <AppRoute exact path="/" component={Home} layout={LayoutWS} />
+          <AppRoute exact path="/login" component={Login} layout={LayoutWS} />
+          <AppRoute exact path="/register" component={Login} layout={LayoutWS} />
           <AppRoute exact path="/gallery" component={Gallery} layout={LayoutWS} />
           <AppRoute exact path="/astheroids" component={Astheroids} layout={LayoutWS} />
           <AppRoute exact path="/astheroids/:id" component={AstheroidDetail} layout={LayoutWS} />

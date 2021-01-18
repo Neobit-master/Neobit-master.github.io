@@ -1,0 +1,13 @@
+.input {
+  display: inline-flex;
+  font-family: $font-primary;
+  vertical-align: middle;
+  label {
+    float: left;
+    font-size: $font-size-p;
+  }
+  input {
+    float: right;
+    font-size: $font-size-p;
+  }
+}
