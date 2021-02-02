@@ -1,6 +1,13 @@
 .login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 324px);
   padding: $space-section-medium;
   &-container {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
     padding: $space-elements-medium;
     border-radius: 20px;
     background-color: $color-primary-white;
@@ -8,11 +15,8 @@
     h2 {
       margin-bottom: $space-elements-medium;
     }
-    form {
-      display: inline-flex;
-      flex-flow: column;
-    }
     .input {
+      width: 100%;
       margin-bottom: $space-elements-medium;
     }
   }
