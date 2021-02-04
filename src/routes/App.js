@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch, Router } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Switch, Router } from 'react-router-dom';
 import { createBrowserHistory } from "history";
 
 //Layouts
@@ -19,9 +19,15 @@ import Gallery from '../containers/Gallery';
 import Login from '../containers/Login';
 import NotFound from '../containers/NotFound';
 
+// Context
+import UserContext from "@Context/UserContext";
+import useGetUserData from '../hooks/useGetUserData';
+
 const App = () => {
+  const userData = useGetUserData();
+  const [user, setUser] = useState(userData);
   return (
-    <>
+    <UserContext.Provider value={{user, setUser}}>
       <Router history={createBrowserHistory()}>
         <Switch>
           <AppRoute exact path="/" component={Home} layout={LayoutWS} />
@@ -37,7 +43,7 @@ const App = () => {
           <AppRoute component={NotFound} layout={LayoutWS} />
         </Switch>
       </Router>
-    </>
+    </UserContext.Provider>
   )
 }
 

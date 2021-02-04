@@ -14,6 +14,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.jsx', '.js'],
+    alias: {
+      '@Context': path.resolve(__dirname, 'src/context')
+    }
   },
   module: {
     rules: [
