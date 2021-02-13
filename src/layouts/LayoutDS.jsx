@@ -1,15 +1,13 @@
-import React from 'react';
+import React from "react";
 
 // Components
-import SideBar from '../components/molecules/SideBar';
+import SideBar from "@Components/molecules/SideBar";
 
 const Layout = ({ children }) => {
   return (
     <div className="designSystem">
       <SideBar />
-      <section className="designSystem--content">
-        {children}
-      </section>
+      <section className="designSystem--content">{children}</section>
     </div>
   );
 };

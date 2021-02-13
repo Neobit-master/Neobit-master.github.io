@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import CardDetail from '../components/organisms/CardDetail';
-import Loading from '../components/molecules/Loading';
+import React, { useEffect, useState } from "react";
+import CardDetail from "@Components/organisms/CardDetail";
+import Loading from "@Components/molecules/Loading";
 
 const AstheroidDetail = ({ match }) => {
-  const { params: {
-      id
-    }
-  } = match
+  const {
+    params: { id },
+  } = match;
   const [astheroid, setAstheroid] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   useEffect(() => {
     async function getData() {
-      const response = await fetch('http://ec2-54-234-62-6.compute-1.amazonaws.com:8080/api/graphql', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          query: `{
+      const response = await fetch(
+        "http://ec2-54-234-62-6.compute-1.amazonaws.com:8080/api/graphql",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            query: `{
               getNeo(id: "${id}") {
                 _id,
                 name,
@@ -37,20 +38,19 @@ const AstheroidDetail = ({ match }) => {
                   last_observation_date
                 }
               }
-            }`
-        })
-      });
+            }`,
+          }),
+        }
+      );
       const body = await response.json();
       setAstheroid(body.data.getNeo);
       setLoading(false);
-    };
+    }
     getData();
   }, []);
   return (
     <div className="astheroidDetail">
-      {
-        loading ? <Loading /> : <CardDetail astheroid={astheroid} />
-      }
+      {loading ? <Loading /> : <CardDetail astheroid={astheroid} />}
     </div>
   );
 };

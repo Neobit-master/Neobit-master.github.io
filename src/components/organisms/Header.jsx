@@ -1,22 +1,24 @@
-import React from 'react';
-import classNames from 'classnames';
-import { Link } from 'react-router-dom';
+import React from "react";
+import classNames from "classnames";
+import { Link } from "react-router-dom";
 
 // images
-import logoWhite from '../../../images/logoWhite.svg'
-import logoBlack from '../../../images/logoBlack.svg'
+import logoWhite from "@Images/logoWhite.svg";
+import logoBlack from "@Images/logoBlack.svg";
 
 // Components
-import Menu from '../molecules/Menu';
+import Menu from "../molecules/Menu";
 
 const Header = ({ dark }) => {
   const headerClass = classNames({
     header: true,
-    'header-dark': dark
+    "header-dark": dark,
   });
   return (
     <header className={headerClass}>
-      <Link to="/"><img src={(dark && logoWhite) || logoBlack} alt="Neobit logo" /></Link>
+      <Link to="/">
+        <img src={(dark && logoWhite) || logoBlack} alt="Neobit logo" />
+      </Link>
       <Menu dark={dark} />
     </header>
   );

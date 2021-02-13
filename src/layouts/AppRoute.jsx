@@ -1,15 +1,33 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
+import useAuth from "@Hooks/useAuth";
+import React from "react";
+import { Redirect, Route } from "react-router-dom";
 
-const AppRoute = ({component: Component, layout: Layout, ...rest}) => {
+const AppRoute = ({
+  component: Component,
+  layout: Layout,
+  private: Private,
+  ...rest
+}) => {
+  const auth = useAuth();
   return (
-    <Route 
+    <Route
       {...rest}
-      render={props => (
-        <Layout>
-          <Component {...props} />
-        </Layout>
-      )}
+      render={(props) => {
+        if (Private) {
+          return auth.user ? (
+            <Layout>
+              <Component {...props} />
+            </Layout>
+          ) : (
+            <Redirect to="login" />
+          );
+        }
+        return (
+          <Layout>
+            <Component {...props} />
+          </Layout>
+        );
+      }}
     />
   );
 };

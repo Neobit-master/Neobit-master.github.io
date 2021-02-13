@@ -1,11 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
 // Router
-import App from './src/routes/App';
+import App from "@Routes/App";
 
 // Styles
-import './src/styles/main.scss';
+import "@Styles/main.scss";
 
-
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById("app"));

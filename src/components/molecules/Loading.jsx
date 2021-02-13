@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
 // Atoms
-import LogoLoading from '../atoms/LogoLoading';
+import LogoLoading from "@Components/atoms/LogoLoading";
 
 const Loading = () => {
   return (
@@ -9,7 +9,7 @@ const Loading = () => {
       <LogoLoading />
       <h3>Cargando</h3>
     </div>
-  )
-}
+  );
+};
 
 export default Loading;

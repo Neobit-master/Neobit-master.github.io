@@ -1,12 +1,12 @@
-import React from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import React from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 // Manifests
-import { buttons } from '../components/manifests/buttonsManifest.json';
+import { buttons } from "@Components/manifests/buttonsManifest.json";
 
 // Components
-import LogoLoading from '../components/atoms/LogoLoading';
+import LogoLoading from "@Components/atoms/LogoLoading";
 
 const Atoms = () => {
   return (
@@ -21,9 +21,15 @@ const Atoms = () => {
         </p>
         <nav>
           <ul>
-            <li><a href="/ds/atoms/#headers">Encabezados</a></li>
-            <li><a href="/ds/atoms/#buttons">Botones</a></li>
-            <li><a href="/ds/atoms/#logoLoading">Logo Loading</a></li>
+            <li>
+              <a href="/ds/atoms/#headers">Encabezados</a>
+            </li>
+            <li>
+              <a href="/ds/atoms/#buttons">Botones</a>
+            </li>
+            <li>
+              <a href="/ds/atoms/#logoLoading">Logo Loading</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -96,7 +102,9 @@ const Atoms = () => {
         <h4>Logo Loading</h4>
         <hr />
         <p>
-          El loading es el componente que nos ayudará a darle una respuesta al usuario cuando alguna acción se esté realizando y esta se demora en completar.
+          El loading es el componente que nos ayudará a darle una respuesta al
+          usuario cuando alguna acción se esté realizando y esta se demora en
+          completar.
         </p>
 
         <div className="systemContent--section--components">

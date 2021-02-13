@@ -1,8 +1,8 @@
-import React from 'react';
-import { FaGithub } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import IsoDS from '../../../images/DS.svg';
-import IsoAPI from '../../../images/API.svg';
+import React from "react";
+import { FaGithub } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import IsoDS from "@Images/DS.svg";
+import IsoAPI from "@Images/API.svg";
 
 const Footer = () => {
   return (
@@ -15,7 +15,10 @@ const Footer = () => {
         <Link to="/ds/">
           <img src={IsoDS} alt="Isotipo del sistema de diseño" />
         </Link>
-        <a target="_blank" href="http://ec2-54-234-62-6.compute-1.amazonaws.com:8080/public/docs/">
+        <a
+          target="_blank"
+          href="http://ec2-54-234-62-6.compute-1.amazonaws.com:8080/public/docs/"
+        >
           <img src={IsoAPI} alt="Isotipo de la API" />
         </a>
       </div>

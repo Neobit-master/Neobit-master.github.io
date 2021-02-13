@@ -1,34 +1,36 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from "react";
 
-import Loading from '../components/molecules/Loading';
-import CurosityFacts from '../components/molecules/CuriosityFacts';
-import CardList from '../components/organisms/CardList';
+import Loading from "@Components/molecules/Loading";
+import CurosityFacts from "@Components/molecules/CuriosityFacts";
+import CardList from "@Components/organisms/CardList";
 
 const ashteroids = () => {
   const [astheroids, setAstheroids] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [skip, setSkip] = useState(0);
   const stateAstheroidsRef = useRef();
   const stateSkipRef = useRef();
   stateAstheroidsRef.current = astheroids;
   stateSkipRef.current = skip;
-  
+
   const options = {
-    rootMargin: '0px 0px 0px 500px'
-  }
+    rootMargin: "0px 0px 0px 500px",
+  };
   const handleIntersection = (entries, observer) => {
-    entries.forEach(async entry => {
+    entries.forEach(async (entry) => {
       if (entry.isIntersecting) {
         setSkip(stateSkipRef.current + 10);
-        const response = await fetch('http://ec2-54-234-62-6.compute-1.amazonaws.com:8080/api/graphql', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-          },
-          body: JSON.stringify({
-            query: `{
+        const response = await fetch(
+          "http://ec2-54-234-62-6.compute-1.amazonaws.com:8080/api/graphql",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+              query: `{
               getNeos(first: 10, skip: ${stateSkipRef.current}) {
                 _id,
                 name,
@@ -46,32 +48,35 @@ const ashteroids = () => {
                   last_observation_date
                 }
               }
-            }`
-          })
-        });
+            }`,
+            }),
+          }
+        );
         const body = await response.json();
-        
+
         setAstheroids(stateAstheroidsRef.current.concat(body.data.getNeos));
         observer.unobserve(entry.target);
-        const cards = document.querySelectorAll('.card');
+        const cards = document.querySelectorAll(".card");
         const lastCard = cards[cards.length - 2];
         observer.observe(lastCard);
       }
-    })
-  }
+    });
+  };
 
   const observer = new IntersectionObserver(handleIntersection, options);
 
   useEffect(() => {
     async function getData() {
-      const response = await fetch('http://ec2-54-234-62-6.compute-1.amazonaws.com:8080/api/graphql', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          query: `{
+      const response = await fetch(
+        "http://ec2-54-234-62-6.compute-1.amazonaws.com:8080/api/graphql",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            query: `{
               getNeos(first: 10, skip: 0) {
                 _id,
                 name,
@@ -89,29 +94,30 @@ const ashteroids = () => {
                   last_observation_date
                 }
               }
-            }`
-        })
-      });
+            }`,
+          }),
+        }
+      );
       setLoading(false);
       const body = await response.json();
       setAstheroids(body.data.getNeos);
-      const cards = document.querySelectorAll('.card');
+      const cards = document.querySelectorAll(".card");
       const lastCard = cards[cards.length - 2];
       observer.observe(lastCard);
       return lastCard;
-    };
-    let lastCard;
-    getData().then(element => lastCard = element).catch(error => setError(error));
-    return () => {
-      observer.unobserve(lastCard)
     }
+    let lastCard;
+    getData()
+      .then((element) => (lastCard = element))
+      .catch((error) => setError(error));
+    return () => {
+      observer.unobserve(lastCard);
+    };
   }, []);
   return (
     <div className="astheroids">
       <CurosityFacts title="Asteroides" />
-      {
-        loading ? <Loading /> : <CardList astheroids={astheroids} />
-      }
+      {loading ? <Loading /> : <CardList astheroids={astheroids} />}
     </div>
   );
 };
