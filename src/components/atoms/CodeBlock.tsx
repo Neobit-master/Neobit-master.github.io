@@ -1,9 +1,28 @@
 import { useEffect, useState, memo, ReactNode } from 'react';
-import { codeToHtml } from 'shiki';
+import { createHighlighterCore, type HighlighterCore } from 'shiki/core';
+import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
 
 interface CodeBlockProps {
   children: ReactNode;
   language?: string;
+}
+
+// Singleton highlighter with only the languages we need
+let highlighterPromise: Promise<HighlighterCore> | null = null;
+
+async function getHighlighter(): Promise<HighlighterCore> {
+  if (!highlighterPromise) {
+    highlighterPromise = createHighlighterCore({
+      themes: [import('shiki/themes/github-dark.mjs')],
+      langs: [
+        import('shiki/langs/html.mjs'),
+        import('shiki/langs/javascript.mjs'),
+        import('shiki/langs/css.mjs'),
+      ],
+      engine: createJavaScriptRegexEngine(),
+    });
+  }
+  return highlighterPromise;
 }
 
 const CodeBlock = memo(({ children, language = 'html' }: CodeBlockProps) => {
@@ -13,11 +32,12 @@ const CodeBlock = memo(({ children, language = 'html' }: CodeBlockProps) => {
   useEffect(() => {
     let cancelled = false;
 
-    codeToHtml(code, {
-      lang: language,
-      theme: 'github-dark',
-    }).then((highlighted) => {
+    getHighlighter().then((highlighter) => {
       if (!cancelled) {
+        const highlighted = highlighter.codeToHtml(code, {
+          lang: language,
+          theme: 'github-dark',
+        });
         setHtml(highlighted);
       }
     });
