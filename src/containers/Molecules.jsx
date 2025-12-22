@@ -1,6 +1,5 @@
 import React from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import CodeBlock from '@/components/atoms/CodeBlock';
 
 // Componenets
 import Loading from '../components/molecules/Loading';
@@ -54,18 +53,18 @@ const Molecules = () => {
             <p>Componente</p>
             <Menu />
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<Menu />`}
-            </SyntaxHighlighter>
+            </CodeBlock>
           </div>
           <div className="container-component">
             <h5>Menu dark</h5>
             <p>Componente</p>
             <Menu dark />
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<Menu dark />`}
-            </SyntaxHighlighter>
+            </CodeBlock>
           </div>
         </div>
       </section>
@@ -83,9 +82,9 @@ const Molecules = () => {
             <p>Componente</p>
             <Loading />
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<Loading />`}
-            </SyntaxHighlighter>
+            </CodeBlock>
           </div>
         </div>
       </section>
@@ -103,9 +102,9 @@ const Molecules = () => {
             <p>Componente</p>
             <Footer />
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<Footer />`}
-            </SyntaxHighlighter>
+            </CodeBlock>
           </div>
         </div>
       </section>
@@ -121,9 +120,9 @@ const Molecules = () => {
             <p>Componente</p>
              <LabelCard title={'Label'} description={'421.520km'} />
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<LabelCard title={ Label } description={ 521.510 km }/>`}
-            </SyntaxHighlighter>
+            </CodeBlock>
           </div>
         </div>
       </section>
@@ -141,27 +140,27 @@ const Molecules = () => {
             <p>Componente</p>
             <Article {...article} />
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<Article title="some title" author="Carolina Laverde..." description="lorem..." />`}
-            </SyntaxHighlighter>
+            </CodeBlock>
           </div>
           <div className="container-component">
             <h5>Curiosity facts</h5>
             <p>Componente</p>
             <CurosityFacts {...curosityFacts} />
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<CuriosityFacts title="some title" description="lorem..." />`}
-            </SyntaxHighlighter>
+            </CodeBlock>
           </div>
           <div className="container-component">
             <h5>Card info</h5>
             <p>Componente</p>
             <CardInfo {...cardInfo} />
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<CardInfo title="some title" description="lorem..." />`}
-            </SyntaxHighlighter>
+            </CodeBlock>
           </div>
         </div>
       </section>
@@ -176,9 +175,9 @@ const Molecules = () => {
           <div className="container-component">
             <Hero />
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<Hero />`}
-            </SyntaxHighlighter>
+            </CodeBlock>
           </div>
         </div>
       </section>
@@ -193,9 +192,9 @@ const Molecules = () => {
           <div className="container-component">
             <Card astheroid={astheroidManifest} />
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<Card ashteroid={astheroid} />`}
-            </SyntaxHighlighter>
+            </CodeBlock>
           </div>
         </div>
       </section>

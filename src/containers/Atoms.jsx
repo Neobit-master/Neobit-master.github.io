@@ -1,6 +1,5 @@
 import React from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import CodeBlock from '@/components/atoms/CodeBlock';
 
 // Manifests
 import { buttons } from '../components/manifests/buttonsManifest.json';
@@ -41,29 +40,29 @@ const Atoms = () => {
           <div className="container-component">
             <h1>Title</h1>
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<h1>Title<h1/>`}
-            </SyntaxHighlighter>
+            </CodeBlock>
             <h2>Title</h2>
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<h2>Title</h2>`}
-            </SyntaxHighlighter>
+            </CodeBlock>
             <h3>Title</h3>
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<h3>Title</h3>`}
-            </SyntaxHighlighter>
+            </CodeBlock>
             <h4>Title</h4>
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<h4>Title</h4>`}
-            </SyntaxHighlighter>
+            </CodeBlock>
             <h5>Title</h5>
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<h5>Title<h5/>`}
-            </SyntaxHighlighter>
+            </CodeBlock>
           </div>
         </div>
       </section>
@@ -84,9 +83,9 @@ const Atoms = () => {
               <p>Componente</p>
               <button className={button.className}>Type me</button>
               <p>Código</p>
-              <SyntaxHighlighter language="htmlbars" style={dark}>
+              <CodeBlock language="html">
                 {button.code}
-              </SyntaxHighlighter>
+              </CodeBlock>
             </div>
           ))}
         </div>
@@ -104,9 +103,9 @@ const Atoms = () => {
             <p>Componente</p>
             <LogoLoading />
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<LogoLoading />`}
-            </SyntaxHighlighter>
+            </CodeBlock>
           </div>
         </div>
       </section>

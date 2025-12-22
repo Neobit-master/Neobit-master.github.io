@@ -1,6 +1,5 @@
 import React from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import CodeBlock from '@/components/atoms/CodeBlock';
 
 // Components
 import Header from '../components/organisms/Header';
@@ -48,18 +47,18 @@ const Atoms = () => {
             <p>Componente</p>
             <Header />
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<Header />`}
-            </SyntaxHighlighter>
+            </CodeBlock>
           </div>
           <div className="container-component">
             <h5>Header dark</h5>
             <p>Componente</p>
             <Header dark />
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<Header dark />`}
-            </SyntaxHighlighter>
+            </CodeBlock>
           </div>
         </div>
       </section>
@@ -76,9 +75,9 @@ const Atoms = () => {
             <p>Componente</p>
             <Articles />
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<Articles />`}
-            </SyntaxHighlighter>
+            </CodeBlock>
           </div>
         </div>
       </section>
@@ -95,9 +94,9 @@ const Atoms = () => {
             <p>Componente</p>
             <CardList astheroids={astheroids} />
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<CardList astheroids={astheroids} />`}
-            </SyntaxHighlighter>
+            </CodeBlock>
           </div>
         </div>
       </section>
@@ -114,9 +113,9 @@ const Atoms = () => {
             <p>Componente</p>
             <CardDetail astheroid={astheroidManifest} />
             <p>Código</p>
-            <SyntaxHighlighter language="htmlbars" style={dark}>
+            <CodeBlock language="html">
               {`<CardDetail astheroid={astheroid} />`}
-            </SyntaxHighlighter>
+            </CodeBlock>
           </div>
         </div>
       </section>
