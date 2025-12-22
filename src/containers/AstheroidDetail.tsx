@@ -1,15 +1,11 @@
 import { useEffect, useState } from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import { useParams } from 'wouter';
 import CardDetail from '../components/organisms/CardDetail';
 import Loading from '../components/molecules/Loading';
 import type { Asteroid } from '@/types';
 
-interface AstheroidDetailParams {
-  id: string;
-}
-
-const AstheroidDetail = ({ match }: RouteComponentProps<AstheroidDetailParams>) => {
-  const { params: { id } } = match;
+const AstheroidDetail = () => {
+  const { id } = useParams<{ id: string }>();
   const [astheroid, setAstheroid] = useState<Asteroid | null>(null);
   const [loading, setLoading] = useState(true);
   const [_error, _setError] = useState('');

@@ -1,5 +1,5 @@
 import LabelCard from './LabelCard';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 import { astheroidManifest } from '../manifests/astheroidManifest.json';
 import type { Asteroid } from '@/types';
 

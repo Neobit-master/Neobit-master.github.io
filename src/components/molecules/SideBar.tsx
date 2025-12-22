@@ -1,26 +1,28 @@
-import { NavLink, Link } from 'react-router-dom';
-import logo from '../../../images/logoDS.svg'
+import { Link, useLocation } from 'wouter';
+import logo from '../../../images/logoDS.svg';
 
 const SideBar = () => {
+  const [location] = useLocation();
+
   return (
     <div className="sidebar">
       <Link to="/ds"><img src={logo} alt="" /></Link>
       <nav>
         <ul>
           <li>
-            <NavLink to="/ds/atoms" activeClassName="selected">
+            <Link to="/ds/atoms" className={location === '/ds/atoms' ? 'selected' : ''}>
               Atomos
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink to="/ds/molecules" activeClassName="selected">
+            <Link to="/ds/molecules" className={location === '/ds/molecules' ? 'selected' : ''}>
               Moléculas
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink to="/ds/organisms" activeClassName="selected">
+            <Link to="/ds/organisms" className={location === '/ds/organisms' ? 'selected' : ''}>
               Organismos
-            </NavLink>
+            </Link>
           </li>
         </ul>
       </nav>

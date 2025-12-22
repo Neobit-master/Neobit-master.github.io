@@ -1,8 +1,6 @@
-import { Switch, Router } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
+import { Switch, Route } from 'wouter';
 import LayoutDS from '../layouts/LayoutDS';
 import LayoutWS from '../layouts/LayoutWS';
-import AppRoute from '../layouts/AppRoute';
 import Home from '../containers/Home';
 import Astheroids from '../containers/Astheroids';
 import HomeDS from '../containers/HomeDS';
@@ -15,22 +13,36 @@ import NotFound from '../containers/NotFound';
 
 const App = () => {
   return (
-    <>
-      <Router history={createBrowserHistory()}>
-        <Switch>
-          <AppRoute exact path="/" component={Home} layout={LayoutWS} />
-          <AppRoute exact path="/gallery" component={Gallery} layout={LayoutWS} />
-          <AppRoute exact path="/astheroids" component={Astheroids} layout={LayoutWS} />
-          <AppRoute exact path="/astheroids/:id" component={AstheroidDetail} layout={LayoutWS} />
-          <AppRoute exact path='/ds' component={HomeDS} layout={LayoutDS} />
-          <AppRoute path='/ds/atoms' component={Atoms} layout={LayoutDS} />
-          <AppRoute path='/ds/molecules' component={Molecules} layout={LayoutDS} />
-          <AppRoute path='/ds/organisms'  component={Organisms} layout={LayoutDS} />
-          <AppRoute component={NotFound} layout={LayoutWS} />
-        </Switch>
-      </Router>
-    </>
-  )
-}
+    <Switch>
+      <Route path="/">
+        <LayoutWS><Home /></LayoutWS>
+      </Route>
+      <Route path="/gallery">
+        <LayoutWS><Gallery /></LayoutWS>
+      </Route>
+      <Route path="/astheroids">
+        <LayoutWS><Astheroids /></LayoutWS>
+      </Route>
+      <Route path="/astheroids/:id">
+        <LayoutWS><AstheroidDetail /></LayoutWS>
+      </Route>
+      <Route path="/ds">
+        <LayoutDS><HomeDS /></LayoutDS>
+      </Route>
+      <Route path="/ds/atoms">
+        <LayoutDS><Atoms /></LayoutDS>
+      </Route>
+      <Route path="/ds/molecules">
+        <LayoutDS><Molecules /></LayoutDS>
+      </Route>
+      <Route path="/ds/organisms">
+        <LayoutDS><Organisms /></LayoutDS>
+      </Route>
+      <Route>
+        <LayoutWS><NotFound /></LayoutWS>
+      </Route>
+    </Switch>
+  );
+};
 
 export default App;

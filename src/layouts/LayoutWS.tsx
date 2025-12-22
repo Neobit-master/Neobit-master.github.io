@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'wouter';
 import Header from '../components/organisms/Header';
 import Footer from '../components/molecules/Footer';
 
@@ -8,8 +8,8 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  let location = useLocation();
-  let dark = location.pathname !== '/' ? false : true;
+  const [location] = useLocation();
+  const dark = location === '/';
   return (
     <div className="layoutWS">
       <Header dark={dark} />

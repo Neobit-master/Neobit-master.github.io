@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 
 // Image
 import Moon from '../../../images/Moon.png';

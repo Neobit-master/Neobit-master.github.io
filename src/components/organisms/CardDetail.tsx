@@ -1,6 +1,6 @@
 import CardInfo from '../molecules/CardInfo';
 import LabelCard from '../molecules/LabelCard';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 import astheroid1 from '../../../images/astheroid1.svg';
 import astheroid2 from '../../../images/astheroid2.svg';
 import astheroid3 from '../../../images/astheroid3.svg';

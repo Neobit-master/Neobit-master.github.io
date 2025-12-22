@@ -1,5 +1,5 @@
 import { FaGithub } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 import IsoDS from '../../../images/DS.svg';
 import IsoAPI from '../../../images/API.svg';
 
