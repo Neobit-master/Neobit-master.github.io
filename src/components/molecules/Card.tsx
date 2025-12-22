@@ -9,7 +9,7 @@ interface CardProps {
 
 const Card = ({ astheroid = astheroidManifest as unknown as Asteroid }: CardProps) => {
   const {
-    _id,
+    id,
     name,
     is_potentially_hazardous_asteroid,
     estimated_diameter: {
@@ -31,7 +31,7 @@ const Card = ({ astheroid = astheroidManifest as unknown as Asteroid }: CardProp
         title="¿Es peligroso?"
         description={is_potentially_hazardous_asteroid ? 'Sí' : 'No'}
       />
-      <Link to={`/astheroids/${_id}`} className="button-secondaryGray">
+      <Link to={`/astheroids/${id}`} className="button-secondaryGray">
         Ver más
       </Link>
     </div>

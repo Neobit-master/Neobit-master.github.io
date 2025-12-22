@@ -1,5 +1,5 @@
 export interface Asteroid {
-  _id: string;
+  id: string;
   name: string;
   absolute_magnitude_h: number;
   estimated_diameter: {
