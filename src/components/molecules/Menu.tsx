@@ -1,15 +1,12 @@
-import classNames from 'classnames';
 import { Link } from 'wouter';
+import { cn } from '../../utils/cn';
 
 interface MenuProps {
   dark?: boolean;
 }
 
 const Menu = ({ dark }: MenuProps) => {
-  const menuClass = classNames({
-    menu: true,
-    'menu-dark': dark
-  });
+  const menuClass = cn('menu', dark && 'menu-dark');
   return (
     <nav aria-label="Navegación principal">
       <ul className={menuClass} role="menubar">
