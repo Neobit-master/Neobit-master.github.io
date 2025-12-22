@@ -1,0 +1,2 @@
+import{j as i}from"./index-BYogYmZm.js";const n=({title:e,description:a})=>i.jsxs("div",{className:"cardInfo",children:[i.jsx("h2",{children:e||"Titulo"}),i.jsx("p",{children:a||"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porta nisl non quam congue lacinia. Nullam ornare mi eu elit ultricies dapibus. Aenean congue sollicitudin ante at imperdiet. Nam ac sapien et ipsum sodales porta in id sapien. Phasellus eu nulla magna. Quisque orci ex, gravida quis rutrum nec."})]});export{n as C};
+//# sourceMappingURL=CardInfo-Cu7UAeWh.js.map

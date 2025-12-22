@@ -1,2 +1,0 @@
-import{j as i}from"./index-7Roz9-0w.js";const a=({title:e,author:s,description:r})=>i.jsxs("div",{className:"article",children:[i.jsx("h4",{children:e||"title"}),i.jsx("p",{className:"article-author",children:s||"author"}),i.jsx("p",{className:"article-body",children:r||"Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dolore delectus libero repellendus cumque, ipsam incidunt animi quam impedit id possimus pariatur, et officiis labore non distinctio rem, magnam doloremque?"})]});export{a as A};
-//# sourceMappingURL=Article-MMKG9Joo.js.map
