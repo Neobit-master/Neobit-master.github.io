@@ -10,7 +10,7 @@ const CardList = ({ astheroids }: CardListProps) => {
   return (
     <section className="cardList">
       {
-        astheroids.map((astheroid) => <Card astheroid={astheroid} key={astheroid._id} />)
+        astheroids.map((astheroid) => <Card astheroid={astheroid} key={astheroid.id} />)
       }
     </section>
   );
