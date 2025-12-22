@@ -529,7 +529,11 @@
 
   /* Layout WS */
   .layoutWS {
-    @apply bg-primary-black;
+    @apply bg-primary-black min-h-screen flex flex-col;
+  }
+
+  .layoutWS > *:not(.header):not(.footer-social) {
+    @apply flex-1;
   }
 
   .layoutWS .footer-social {
@@ -596,6 +600,14 @@
   /* Container: Astheroids */
   .astheroids {
     @apply mt-section-medium;
+  }
+
+  .error-container {
+    @apply flex flex-col items-center justify-center py-20 px-section-big text-center;
+  }
+
+  .error-message {
+    @apply text-primary-white text-p mb-6 max-w-lg;
   }
 
   .astheroids .curiosityFacts {
