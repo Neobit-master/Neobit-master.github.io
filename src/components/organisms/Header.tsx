@@ -14,8 +14,10 @@ const Header = ({ dark }: HeaderProps) => {
     'header-dark': dark
   });
   return (
-    <header className={headerClass}>
-      <Link to="/"><img src={(dark && logoWhite) || logoBlack} alt="Neobit logo" /></Link>
+    <header className={headerClass} role="banner">
+      <Link to="/" aria-label="Ir al inicio">
+        <img src={(dark && logoWhite) || logoBlack} alt="Neobit logo" />
+      </Link>
       <Menu dark={dark} />
     </header>
   );

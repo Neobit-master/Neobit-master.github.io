@@ -12,10 +12,13 @@ const Layout = ({ children }: LayoutProps) => {
   const dark = location === '/';
   return (
     <div className="layoutWS">
+      <a href="#main-content" className="skip-link">
+        Saltar al contenido principal
+      </a>
       <Header dark={dark} />
-      <section>
+      <main id="main-content" role="main">
         {children}
-      </section>
+      </main>
       <Footer />
     </div>
   );

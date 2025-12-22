@@ -3,6 +3,7 @@ import { Switch, Route } from 'wouter';
 import LayoutDS from '../layouts/LayoutDS';
 import LayoutWS from '../layouts/LayoutWS';
 import Loading from '../components/molecules/Loading';
+import ErrorBoundary from '../components/atoms/ErrorBoundary';
 
 const Home = lazy(() => import('../containers/Home'));
 const Gallery = lazy(() => import('../containers/Gallery'));
@@ -16,8 +17,9 @@ const NotFound = lazy(() => import('../containers/NotFound'));
 
 const App = () => {
   return (
-    <Suspense fallback={<LayoutWS><Loading /></LayoutWS>}>
-      <Switch>
+    <ErrorBoundary>
+      <Suspense fallback={<LayoutWS><Loading /></LayoutWS>}>
+        <Switch>
         <Route path="/">
           <LayoutWS><Home /></LayoutWS>
         </Route>
@@ -47,6 +49,7 @@ const App = () => {
         </Route>
       </Switch>
     </Suspense>
+    </ErrorBoundary>
   );
 };
 

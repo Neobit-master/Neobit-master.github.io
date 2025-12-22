@@ -11,11 +11,13 @@ const Menu = ({ dark }: MenuProps) => {
     'menu-dark': dark
   });
   return (
-    <ul className={menuClass}>
-      <li><Link to="/">Inicio</Link></li>
-      <li><Link to="/astheroids">Descubre</Link></li>
-      <li><Link to="/gallery">Galería</Link></li>
-    </ul>
+    <nav aria-label="Navegación principal">
+      <ul className={menuClass} role="menubar">
+        <li role="none"><Link to="/" role="menuitem">Inicio</Link></li>
+        <li role="none"><Link to="/astheroids" role="menuitem">Descubre</Link></li>
+        <li role="none"><Link to="/gallery" role="menuitem">Galería</Link></li>
+      </ul>
+    </nav>
   );
 };
 

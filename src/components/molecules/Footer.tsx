@@ -5,19 +5,29 @@ import IsoAPI from '../../../images/API.svg';
 
 const Footer = () => {
   return (
-    <footer className="footer-social">
+    <footer className="footer-social" role="contentinfo">
       <p>Copyrigth © By Platzi Master</p>
-      <div className="social">
-        <a target="_blank" rel="noopener noreferrer" href="https://github.com/WS-Jedp/NeoBit">
-          <FaGithub />
+      <nav className="social" aria-label="Enlaces externos">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/WS-Jedp/NeoBit"
+          aria-label="Repositorio de GitHub"
+        >
+          <FaGithub aria-hidden="true" />
         </a>
-        <Link to="/ds/">
-          <img src={IsoDS} alt="Isotipo del sistema de diseño" />
+        <Link to="/ds/" aria-label="Sistema de diseño">
+          <img src={IsoDS} alt="" aria-hidden="true" />
         </Link>
-        <a target="_blank" rel="noopener noreferrer" href="http://ec2-54-234-62-6.compute-1.amazonaws.com:8080/public/docs/">
-          <img src={IsoAPI} alt="Isotipo de la API" />
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="http://ec2-54-234-62-6.compute-1.amazonaws.com:8080/public/docs/"
+          aria-label="Documentación de la API"
+        >
+          <img src={IsoAPI} alt="" aria-hidden="true" />
         </a>
-      </div>
+      </nav>
     </footer>
   );
 };

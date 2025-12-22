@@ -161,6 +161,32 @@
 
 /* ========== COMPONENT STYLES ========== */
 @layer components {
+  /* Skip Link - Accessibility */
+  .skip-link {
+    @apply absolute bg-primary-white text-primary-black font-bold py-2 px-4 z-50
+           no-underline transition-transform;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .skip-link:focus {
+    @apply top-4 outline-none;
+    box-shadow: 0 0 0 3px theme('colors.secondary.blue');
+  }
+
+  /* Focus Indicators - Accessibility */
+  *:focus-visible {
+    @apply outline-none;
+    box-shadow: 0 0 0 3px theme('colors.secondary.blue');
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    @apply outline-none;
+    box-shadow: 0 0 0 3px theme('colors.secondary.blue');
+  }
+
   /* Buttons */
   .button {
     @apply inline-block box-border min-w-[270px] max-w-[270px] text-center
@@ -412,6 +438,7 @@
     animation: playX 1s steps(8) infinite, playY 8s steps(8) infinite;
   }
 
+  .card h3,
   .card h4 {
     @apply text-h5 text-secondary-gray font-bold mt-absolute-xbig mb-elements-medium;
   }
@@ -608,6 +635,20 @@
 
   .error-message {
     @apply text-primary-white text-p mb-6 max-w-lg;
+  }
+
+  /* Error Boundary */
+  .error-boundary {
+    @apply flex flex-col items-center justify-center min-h-[50vh]
+           bg-primary-black text-primary-white text-center px-section-big;
+  }
+
+  .error-boundary h2 {
+    @apply text-h2 text-secondary-gray mb-4;
+  }
+
+  .error-boundary p {
+    @apply text-p mb-6 max-w-lg;
   }
 
   .astheroids .curiosityFacts {
