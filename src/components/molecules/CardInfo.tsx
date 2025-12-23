@@ -1,9 +1,11 @@
+import { memo } from 'react';
+
 interface CardInfoProps {
   title?: string;
   description?: string;
 }
 
-const CardInfo = ({ title, description }: CardInfoProps) => {
+const CardInfo = memo(({ title, description }: CardInfoProps) => {
   return (
     <div className="cardInfo">
       <h2>{title || 'Titulo'}</h2>
@@ -13,6 +15,8 @@ const CardInfo = ({ title, description }: CardInfoProps) => {
       </p>
     </div>
   );
-};
+});
+
+CardInfo.displayName = 'CardInfo';
 
 export default CardInfo;

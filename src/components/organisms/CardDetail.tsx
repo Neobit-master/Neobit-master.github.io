@@ -1,3 +1,4 @@
+import { memo, useMemo } from 'react';
 import CardInfo from '../molecules/CardInfo';
 import LabelCard from '../molecules/LabelCard';
 import { Link } from 'wouter';
@@ -10,7 +11,7 @@ interface CardDetailProps {
   astheroid: Asteroid;
 }
 
-const CardDetail = ({ astheroid }: CardDetailProps) => {
+const CardDetail = memo(({ astheroid }: CardDetailProps) => {
   const {
     name,
     absolute_magnitude_h,
@@ -26,15 +27,14 @@ const CardDetail = ({ astheroid }: CardDetailProps) => {
       last_observation_date,
     }
   } = astheroid;
-  const images = [
-    astheroid1,
-    astheroid2
-  ];
   const formattedMax = estimated_diameter_max.toFixed(2);
   const formattedMin = estimated_diameter_min.toFixed(2);
 
-  const getRandomAstheroid = (imgs: string[]) => imgs[Math.floor(Math.random() * imgs.length)];
-  const randomImage = getRandomAstheroid(images);
+  // Memoize random image to prevent re-selection on re-renders
+  const randomImage = useMemo(() => {
+    const images = [astheroid1, astheroid2];
+    return images[Math.floor(Math.random() * images.length)];
+  }, []);
 
   return (
     <div className="cardDetail">
@@ -58,6 +58,8 @@ const CardDetail = ({ astheroid }: CardDetailProps) => {
       </div>
     </div>
   );
-};
+});
+
+CardDetail.displayName = 'CardDetail';
 
 export default CardDetail;

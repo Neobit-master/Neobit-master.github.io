@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import LabelCard from './LabelCard';
 import { Link } from 'wouter';
 import { astheroidManifest } from '../manifests/astheroidManifest.json';
@@ -7,7 +8,7 @@ interface CardProps {
   astheroid?: Asteroid;
 }
 
-const Card = ({ astheroid = astheroidManifest as unknown as Asteroid }: CardProps) => {
+const Card = memo(({ astheroid = astheroidManifest as unknown as Asteroid }: CardProps) => {
   const {
     id,
     name,
@@ -41,6 +42,8 @@ const Card = ({ astheroid = astheroidManifest as unknown as Asteroid }: CardProp
       </Link>
     </article>
   );
-};
+});
+
+Card.displayName = 'Card';
 
 export default Card;
